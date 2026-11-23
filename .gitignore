@@ -1,0 +1,11 @@
+# Build outputs
+stone_age
+test_runner
+test_agents
+*.o
+
+# Save files
+savegame.dat
+
+# macOS
+.DS_Store

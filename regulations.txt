@@ -1,0 +1,291 @@
+================================================================
+STONE AGE - GAME RULES SUMMARY & NOTES
+Programming Techniques Project - Milestone 1
+================================================================
+
+----------------------------------------------------------------
+1. GAME OVERVIEW
+----------------------------------------------------------------
+- 2 to 4 players, ages 10+, 60-90 minutes per game
+- Players manage a tribe in the Stone Age, gathering resources,
+  building huts, acquiring civilization cards, and feeding their people
+- Goal: accumulate the most victory points (VP) by game end
+- Many valid strategies exist (resource focus, card focus, people focus, etc.)
+
+----------------------------------------------------------------
+2. GAME COMPONENTS
+----------------------------------------------------------------
+- 1 game board
+- 4 player boards
+- 58 wooden resources (wood, brick, stone, gold)
+- 40 wooden people figures (10 per color: red, blue, green, yellow)
+- 8 wooden markers (2 sizes, for food track and scoring track)
+- 53 food tiles (various values)
+- 28 building tiles
+- 18 tool tiles (values 1/2 and 3/4)
+- 1 start player figure
+- 36 civilization cards
+- 7 dice
+- 1 leather dice cup
+- 1 information sheet
+
+----------------------------------------------------------------
+3. BOARD LOCATIONS & WORKER LIMITS
+----------------------------------------------------------------
+Each round, players place workers on the following locations:
+
+  HUNT          - No worker limit (each player places as many as they want, once per round)
+  FOREST        - Max 7 workers total (yields WOOD, divisor 3)
+  CLAY PIT      - Max 7 workers total (yields BRICK, divisor 4)
+  QUARRY        - Max 7 workers total (yields STONE, divisor 5)
+  RIVER         - Max 7 workers total (yields GOLD, divisor 6)
+  TOOL MAKER    - Exactly 1 worker
+  HUT           - Exactly 2 workers (same player, must place both)
+  FIELD         - Exactly 1 worker
+  CIV. CARDS    - 4 slots, exactly 1 worker each
+  BUILDINGS     - 1 worker per visible building tile (up to 4 stacks active)
+
+  RULE: A player cannot place workers at the same location twice in one round.
+  RULE: Passing is not allowed if legal placement spots remain.
+
+  Player count adjustments:
+    2 players: forest/clay/quarry/river each allow only 1 player's workers
+    3 players: forest/clay/quarry/river each allow only 2 players' workers
+    2 or 3 players: only 2 of the 3 special places (toolmaker, hut, field)
+                    can be used each round; one is always blocked
+
+----------------------------------------------------------------
+4. RESOURCES
+----------------------------------------------------------------
+  WOOD  - gathered from Forest  (dice total / 3)
+  BRICK - gathered from Clay Pit (dice total / 4)
+  STONE - gathered from Quarry  (dice total / 5)
+  GOLD  - gathered from River   (dice total / 6)
+  FOOD  - gathered from Hunt (dice total / 2) or food track production
+
+  Resources are used to buy civilization cards and buildings.
+  Food CANNOT be used to pay for civilization cards or buildings.
+  Resources are not strictly limited (use substitutes if supply runs out).
+
+  Resource point values (used in building scoring):
+    WOOD  = 3 points
+    BRICK = 4 points
+    STONE = 5 points
+    GOLD  = 6 points
+
+----------------------------------------------------------------
+5. TOOLS
+----------------------------------------------------------------
+  - Each player has 3 tool slots on their board
+  - Tools start at value 0 (no tool) and increase: 1 -> 2 -> 3 -> 4
+  - Tools 1-3:   value 1 tiles placed (3 tiles, one per slot)
+  - Tools 4-6:   flip value 1 tiles to value 2
+  - Tools 7-9:   replace value 2 with value 3
+  - Tools 10-12: turn value 3 to value 4
+  - Each tool can be used ONCE per round (rotated 90° to show use)
+  - Tools add directly to dice roll totals
+  - Tools reset (unrotated) at the start of each new round
+  - Civilization cards can provide one-time-use bonus tools
+
+----------------------------------------------------------------
+6. ROUND STRUCTURE (3 Phases)
+----------------------------------------------------------------
+
+PHASE 1: WORKER PLACEMENT
+  - Start player places 1 or more workers on ONE location of their choice
+  - Next player clockwise does the same
+  - Continue until all players have placed all their workers
+  - Workers placed = player cannot place more at that location this round
+
+PHASE 2: ACTION RESOLUTION
+  - Start player uses ALL their workers first, then next player clockwise
+  - Player chooses ORDER in which to use their own workers
+  - Actions per location:
+      HUNT        -> roll 1 die per worker, add tools, gain food = total/2
+      FOREST      -> roll 1 die per worker, add tools, gain wood = total/3
+      CLAY PIT    -> roll 1 die per worker, add tools, gain brick = total/4
+      QUARRY      -> roll 1 die per worker, add tools, gain stone = total/5
+      RIVER       -> roll 1 die per worker, add tools, gain gold = total/6
+      TOOL MAKER  -> gain 1 new tool level
+      HUT         -> gain 1 new person (added from supply)
+      FIELD       -> food production marker moves +1
+      CIV. CARD   -> pay resource cost shown, take card, apply effect
+      BUILDING    -> pay resource cost shown, take tile, gain VP immediately
+
+PHASE 3: FEED YOUR PEOPLE
+  - Each player gains food = their food production marker position
+  - Each player then pays 1 food per worker they own
+  - If insufficient food:
+      * Return all food you have
+      * Optionally pay remaining shortfall with resources (1 resource = 1 food)
+      * If still cannot or will not pay: lose 10 VP immediately
+      * Must return ALL food regardless
+
+  - After feeding: start player token passes left; new round begins
+
+----------------------------------------------------------------
+7. BETWEEN ROUNDS
+----------------------------------------------------------------
+  - Slide remaining civilization cards to the right to fill gaps
+  - Draw new cards from pile (right to left) to fill remaining slots
+  - Reset all used tools to their normal position
+
+----------------------------------------------------------------
+8. CIVILIZATION CARDS (36 total)
+----------------------------------------------------------------
+  Cards have TWO parts:
+    TOP HALF    - immediate effect when card is acquired
+    BOTTOM HALF - scoring symbol used at game end
+
+  TOP HALF effects (used immediately on acquisition):
+    Food cards (7)           - take N food immediately
+    Resource cards (5)       - take 1 specific resource
+    Resource+roll cards (3)  - roll 2 dice, gain that resource
+    Points cards (3)         - gain 3 VP immediately
+    New tool card (1)        - gain 1 tool level
+    Food prod. cards (2)     - move food marker +1
+    Dice-choice cards (10)   - roll dice equal to player count; each player
+                               picks one die result (resource or food prod.)
+    Extra card (1)           - draw top card of pile (score only at end)
+    One-time tool (3)        - bonus tool card usable once any time
+    Free resources card (1)  - take 2 resources of any type, once
+
+  BOTTOM HALF symbols:
+    Green background (16 cards, 8 types x2):
+      Healing, Art, Writing, Pottery, Time, Transport, Music, Weaving
+      Score = (number of DIFFERENT green symbols) squared + extras
+      e.g., 5 different symbols = 5x5 = 25 VP; extra same symbol = +1 each
+
+    Sand-colored background (20 cards):
+      Farmer      - multiply count by food production marker value
+      Tool Maker  - multiply count by total tool value
+      Hut Builder - multiply count by number of buildings owned
+      Shaman      - multiply count by number of people in tribe
+
+----------------------------------------------------------------
+9. BUILDINGS (28 tiles, 4 stacks of 7)
+----------------------------------------------------------------
+  Three types:
+    SPECIFIC   - exact resources shown must be paid; fixed VP reward
+    SELECT-4   - pay exactly 4 resources from exactly 2 different kinds;
+                 VP = sum of resource values paid
+    FLEXIBLE   - pay 1 to 7 resources, any kinds;
+                 VP = sum of resource values paid
+
+  Resource values for VP calculation:
+    Wood = 3, Brick = 4, Stone = 5, Gold = 6
+
+  On purchase: player gains VP immediately and flips next tile in stack
+  Player count determines active stacks: 2 players=2 stacks, 3=3, 4=4
+  Stacks beyond player count are removed before game start
+
+----------------------------------------------------------------
+10. GAME END CONDITIONS
+----------------------------------------------------------------
+  The game ends IMMEDIATELY if:
+    A) Not enough civilization cards remain to refill all display slots
+       at the start of a round (game ends before that round begins)
+    B) At least 1 building stack is completely empty
+       (current round is played to completion including feeding)
+
+----------------------------------------------------------------
+11. FINAL SCORING
+----------------------------------------------------------------
+  Add points from each of the following:
+
+  1. Green civilization cards: (# different symbols)^2 + 1 per duplicate
+  2. Sand civilization cards:
+       Farmers     x food production marker value
+       Tool makers x total tool value (sum of all tool slots)
+       Hut builders x number of buildings owned
+       Shamen      x number of people in tribe
+  3. Resources remaining on player board: 1 VP each
+  4. Score already accumulated during the game (buildings, points cards)
+
+  WINNER: player with most total VP
+  TIE-BREAKER: highest combined total of food production + tools + people
+
+----------------------------------------------------------------
+12. KEY DATA STRUCTURES NEEDED (C Implementation)
+----------------------------------------------------------------
+
+  GameState
+    - array of Player structs
+    - Board struct
+    - round counter
+    - start player index
+    - game_over flag
+
+  Player
+    - name
+    - people_total, people_available
+    - food_production (food track position)
+    - food_stock
+    - resources[4] (wood, brick, stone, gold)
+    - tool_values[3], tool_used[3]
+    - civ_cards[], civ_card_count
+    - buildings[], building_count
+    - one_time_tools[], free_resource_card flag
+    - score
+
+  Board
+    - supply[5] (resources + food)
+    - LocationSlot locations[] (worker counts per location)
+    - CivCard civ_display[4] + civ_deck[]
+    - Building building_stacks[4][7] + stack_sizes[]
+
+  CivCard
+    - symbol (scoring category)
+    - effect (immediate top-half action)
+    - effect_value (amount of food/resource/VP etc.)
+    - one_time_used flag
+
+  Building
+    - type (specific / select4 / flexible)
+    - cost[4] (resources required)
+    - points (VP)
+    - face_up flag
+
+----------------------------------------------------------------
+13. KEY FUNCTIONS NEEDED (C Implementation)
+----------------------------------------------------------------
+
+  Initialization:
+    init_game(), init_civ_deck(), init_buildings(), init_board_locations()
+
+  Randomness:
+    roll_die(), roll_dice(), shuffle_civ_cards(), shuffle_buildings()
+
+  Placement Phase:
+    place_workers(), location_has_space(), player_already_placed()
+
+  Action Phase:
+    evaluate_location(), evaluate_hunt(), evaluate_forest(),
+    evaluate_clay_pit(), evaluate_quarry(), evaluate_river(),
+    evaluate_toolmaker(), evaluate_hut(), evaluate_field(),
+    evaluate_civ_card(), evaluate_building()
+
+  Tool usage:
+    apply_tools(), gain_tool(), reset_tools()
+
+  Food Phase:
+    feed_players(), collect_food_production()
+
+  Round management:
+    end_round(), refill_civ_cards(), pass_start_player()
+
+  Scoring:
+    compute_final_score(), compute_green_card_score(),
+    compute_sand_card_score(), determine_winner()
+
+  Input/Validation:
+    validate_placement(), validate_resource_payment(),
+    validate_building_payment()
+
+  I/O & Logging:
+    print_board(), print_player_board(), log_action(),
+    save_game(), load_game()
+
+================================================================
+END OF RULES NOTES
+================================================================
